@@ -6,7 +6,7 @@ local shell = require("shell")
 if component.isAvailable("internet") then
 	print("Starting Install...")
 	require("filesystem").makeDirectory("/RBMK_Control")
-	local setup_1
+	local setup_1 = io.open("/setup.lua")
 	os.execute("wget \"https://raw.githubusercontent.com/BallOfEnergy1/RBMK_Control/master/RBMK_Control/setup.lua\" \"/setup.lua\" -f")
 	local setup_2 = io.open("/setup.lua")
 	if setup_2:read("*a") == "" then
